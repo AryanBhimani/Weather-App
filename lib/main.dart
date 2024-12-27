@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Weather app',
-      // debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       // home: const MyHomePage(title: 'Weather App Home Page'),
       home:SplashScreen(),
     );
