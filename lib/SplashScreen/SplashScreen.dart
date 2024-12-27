@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:weatherapp/home/Home.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class SplashScreen extends StatelessWidget {
         // Navigate to Home if user is logged in
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => Home()),
+          MaterialPageRoute(builder: (context) => MyHomePage(title: '',)),
         );
       } else {
         // Navigate to Login if user is not logged in
@@ -91,7 +92,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       // Navigate to the login page if onboarding is completed
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Login()),
+        MaterialPageRoute(builder: (context) => MyHomePage(title: '',)),
       );
     }
   }
