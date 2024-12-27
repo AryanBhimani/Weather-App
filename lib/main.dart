@@ -13,14 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Weather app',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      // debugShowCheckedModeBanner: false,
       // home: const MyHomePage(title: 'Weather App Home Page'),
-      home: const SplashScreen(),
+      home:SplashScreen(),
     );
   }
 }
