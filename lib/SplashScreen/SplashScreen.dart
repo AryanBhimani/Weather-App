@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:weatherapp/home/Home.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -205,7 +206,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
               _setOnboardingCompleted();
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => Login()),
+                MaterialPageRoute(builder: (context) => MyHomePage(title: '',)),
               );
             }
           });
