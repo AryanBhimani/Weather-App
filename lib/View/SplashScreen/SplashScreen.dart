@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:weatherapp/View/home/Home.dart';
+import 'package:weatherapp/home/Home.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});
