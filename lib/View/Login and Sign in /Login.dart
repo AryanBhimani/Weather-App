@@ -83,9 +83,9 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         GestureDetector(
-                          // onTap: () {
-                          //   Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassword()));
-                          // },
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassword()));
+                          },
                           child: Text('Forget password?',
                             style: TextStyle(
                               color: Color(0xff000004),
