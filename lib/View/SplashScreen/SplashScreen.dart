@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:weatherapp/View/Login%20and%20Sign%20in%20/Login.dart';
 import 'package:weatherapp/home/Home.dart';
 
 class SplashScreen extends StatelessWidget {
@@ -93,7 +94,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       // Navigate to the login page if onboarding is completed
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MyHomePage()),
+        MaterialPageRoute(builder: (context) => const Login()),
       );
     }
   }
