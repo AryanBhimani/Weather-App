@@ -1,7 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherapp/View/Login%20and%20Sign%20in%20/Sign%20in.dart';
-import 'package:weatherapp/home/Home.dart';
+import 'package:notes_app/ForgetPassword/ForgetPassword.dart';
+import 'package:notes_app/Home%20/home.dart';
+import 'package:notes_app/Sign%20Up/signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -34,7 +35,7 @@ class _LoginState extends State<Login> {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const MyHomePage()),
+        MaterialPageRoute(builder: (context) => const Home()),
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
@@ -82,9 +83,9 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         GestureDetector(
-                          // onTap: () {
-                          //   Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassword()));
-                          // },
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassword()));
+                          },
                           child: Text('Forget password?',
                             style: TextStyle(
                               color: Color(0xff000004),

@@ -92,10 +92,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
 
     if (isOnboardingCompleted) {
       // Navigate to the login page if onboarding is completed
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const Login()),
-      );
+      // Navigator.pushReplacement(
+      //   context,
+      //   MaterialPageRoute(builder: (context) => const Login()),
+      // );
     }
   }
 
