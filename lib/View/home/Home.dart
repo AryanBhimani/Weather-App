@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  String city = "New York"; // Default city
+  String temperature = "25°C"; // Dummy data
+  String weatherCondition = "Sunny"; // Dummy data
+  String weatherIcon = "☀️"; // Dummy data
 
-  void _incrementCounter() {
+  // Placeholder for API call
+  void fetchWeather(String cityName) {
+    // Simulate an API response
     setState(() {
-      _counter++;
+      city = cityName;
+      temperature = "22°C"; // Update temperature dynamically
+      weatherCondition = "Cloudy"; // Update weather dynamically
+      weatherIcon = "☁️"; // Update icon dynamically
     });
   }
 
@@ -20,32 +26,46 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Weather App",
-            style: Theme.of(context).textTheme.headlineMedium?.copyWith
-            (
-              color: Theme.of(context).colorScheme.onPrimary
-            )
-          ),
+        title: Text("Weather App"),
+        centerTitle: true,
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+          children: [
+            // Search Bar
+            TextField(
+              decoration: InputDecoration(
+                hintText: "Enter city name",
+                border: OutlineInputBorder(),
+                suffixIcon: Icon(Icons.search),
+              ),
+              onSubmitted: (value) {
+                if (value.isNotEmpty) {
+                  fetchWeather(value); // Fetch weather for the entered city
+                }
+              },
+            ),
+            SizedBox(height: 20),
+            // Weather Information
+            Text(
+              "$weatherIcon",
+              style: TextStyle(fontSize: 64),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+              "$city",
+              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "$temperature",
+              style: TextStyle(fontSize: 48),
+            ),
+            Text(
+              "$weatherCondition",
+              style: TextStyle(fontSize: 24, color: Colors.grey[700]),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
