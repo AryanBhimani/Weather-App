@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:notes_app/ForgetPassword/ForgetPassword.dart';
-import 'package:notes_app/Home%20/home.dart';
-import 'package:notes_app/Sign%20Up/signup.dart';
+import 'package:weatherapp/home/Home.dart';
+
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -35,7 +34,7 @@ class _LoginState extends State<Login> {
       if (!mounted) return;
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const Home()),
+        MaterialPageRoute(builder: (context) => const MyHomePage()),
       );
     } on FirebaseAuthException catch (e) {
       setState(() {
@@ -83,9 +82,9 @@ class _LoginState extends State<Login> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         GestureDetector(
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassword()));
-                          },
+                          // onTap: () {
+                          //   Navigator.push(context, MaterialPageRoute(builder: (context)=>const ForgotPassword()));
+                          // },
                           child: Text('Forget password?',
                             style: TextStyle(
                               color: Color(0xff000004),
@@ -131,10 +130,10 @@ class _LoginState extends State<Login> {
                       const Text("Don't have an account?"),
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const SignupScreen()),
-                          );
+                          // Navigator.push(
+                          //   context,
+                          //   MaterialPageRoute(builder: (context) => const SignupScreen()),
+                          // );
                         },
                         child: const Text(
                           'SIGN UP',
