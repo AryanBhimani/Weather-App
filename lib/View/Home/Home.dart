@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -6,20 +8,85 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String city = "New York"; // Default city
-  String temperature = "25°C"; // Dummy data
-  String weatherCondition = "Sunny"; // Dummy data
-  String weatherIcon = "☀️"; // Dummy data
+  String city = "Enter a city"; // Placeholder city name
+  String temperature = "--°C"; // Placeholder temperature
+  String weatherCondition = "Unknown"; // Placeholder weather condition
+  String weatherIcon = "❓"; // Placeholder icon
+  bool isLoading = false;
 
-  // Placeholder for API call
-  void fetchWeather(String cityName) {
-    // Simulate an API response
+  // Fetch weather data from OpenWeatherMap API
+  Future<void> fetchWeather(String cityName) async {
+    // final apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
+    
+    // ignore: prefer_const_declarations
+    final apiKey = "cb03cbe1e18d2c33c247c5927959d639";
+    final url = "https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric";
+
     setState(() {
-      city = cityName;
-      temperature = "22°C"; // Update temperature dynamically
-      weatherCondition = "Cloudy"; // Update weather dynamically
-      weatherIcon = "☁️"; // Update icon dynamically
+      isLoading = true;
     });
+
+    try {
+      final response = await http.get(Uri.parse(url));
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        setState(() {
+          city = data['name'];
+          temperature = "${data['main']['temp']}°C";
+          weatherCondition = data['weather'][0]['description'];
+          weatherIcon = getWeatherIcon(data['weather'][0]['icon']);
+          isLoading = false;
+        });
+      } else {
+        showError("City not found. Please try again.");
+      }
+    } catch (e) {
+      showError("An error occurred. Please check your connection.");
+    }
+  }
+
+  // Map weather icon code to emoji
+  String getWeatherIcon(String iconCode) {
+    switch (iconCode) {
+      case "01d":
+        return "☀️";
+      case "01n":
+        return "🌙";
+      case "02d":
+      case "02n":
+        return "⛅";
+      case "03d":
+      case "03n":
+        return "☁️";
+      case "04d":
+      case "04n":
+        return "☁️";
+      case "09d":
+      case "09n":
+        return "🌧️";
+      case "10d":
+      case "10n":
+        return "🌦️";
+      case "11d":
+      case "11n":
+        return "🌩️";
+      case "13d":
+      case "13n":
+        return "❄️";
+      case "50d":
+      case "50n":
+        return "🌫️";
+      default:
+        return "❓";
+    }
+  }
+
+  // Display error message
+  void showError(String message) {
+    setState(() {
+      isLoading = false;
+    });
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
@@ -32,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             // Search Bar
             TextField(
@@ -48,22 +116,26 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 20),
             // Weather Information
-            Text(
-              "$weatherIcon",
-              style: TextStyle(fontSize: 64),
-            ),
-            Text(
-              "$city",
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              "$temperature",
-              style: TextStyle(fontSize: 48),
-            ),
-            Text(
-              "$weatherCondition",
-              style: TextStyle(fontSize: 24, color: Colors.grey[700]),
-            ),
+            if (isLoading)
+              CircularProgressIndicator()
+            else ...[
+              Text(
+                weatherIcon,
+                style: TextStyle(fontSize: 64),
+              ),
+              Text(
+                city,
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+              ),
+              Text(
+                temperature,
+                style: TextStyle(fontSize: 48),
+              ),
+              Text(
+                weatherCondition,
+                style: TextStyle(fontSize: 24, color: Colors.grey[700]),
+              ),
+            ],
           ],
         ),
       ),
