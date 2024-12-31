@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:weatherapp/View/ForgotPassword/ForgotPassword.dart';
 import 'package:weatherapp/View/Login%20and%20Sign%20in%20/Sign%20in.dart';
-import 'package:weatherapp/View/home/Home.dart';
+import 'package:weatherapp/View/Home/Home.dart';
 
 
 class Login extends StatefulWidget {
