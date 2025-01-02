@@ -1,21 +1,52 @@
 # Weather App
 
-A new Flutter project.
+Weather App is a mobile application built using Flutter that provides real-time weather updates. The app leverages Firebase for backend services and OpenWeatherMap API to fetch weather data.
 
-![Onboarding](assets/Weather-rafiki.png)
+## Features
+- Real-time weather updates
+- Weather forecasts for multiple locations
+- User-friendly interface
+- Integration with Firebase for authentication and data storage
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
+- Flutter SDK: [Install Flutter](https://flutter.dev/docs/get-started/install)
+- Firebase account: [Create Firebase Project](https://firebase.google.com/)
+- OpenWeatherMap API key: [Get API Key](https://home.openweathermap.org/api_keys)
 
-A few resources to get you started if this is your first Flutter project:
+### Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/yourusername/weatherapp.git
+    cd weatherapp
+    ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Install dependencies:
+    ```sh
+    flutter pub get
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Configure Firebase:
+    - Follow the instructions to add Firebase to your Flutter app: [Add Firebase to your Flutter app](https://firebase.google.com/docs/flutter/setup)
+
+4. Configure OpenWeatherMap API:
+    - Create a file named `config.dart` in the [lib](http://_vscodecontentref_/0) directory and add your OpenWeatherMap API key:
+    ```dart
+    // filepath: lib/config.dart
+    const String apiKey = 'YOUR_OPENWEATHERMAP_API_KEY';
+    const String apiUrl = 'https://api.openweathermap.org/data/2.5/';
+    ```
+
+5. Run the app:
+    ```sh
+    flutter run
+    ```
+
+## Resources
+- [Flutter Documentation](https://docs.flutter.dev/)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [OpenWeatherMap API Documentation](https://openweathermap.org/api)
 
 ---
 
