@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-![Onboarding](assets/Weather-rafiki.png.jpg)
+![Onboarding](assets/Weather-rafiki.png)
 
 ## Getting Started
 
