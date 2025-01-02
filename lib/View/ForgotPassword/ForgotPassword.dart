@@ -111,7 +111,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
-                          color: const Color(0xFFFFCA28),  // Keep the button color for the "Send Email"
+                          color: Colors.blueAccent,  // Keep the button color for the "Send Email"
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child: const Center(
@@ -150,7 +150,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                           child: const Text(
                             "Create one",
                             style: TextStyle(
-                              color: Color(0xFFFFCA28),
+                              color: Colors.blueAccent,
                               fontSize: 20.0,
                               fontWeight: FontWeight.w500,
                             ),

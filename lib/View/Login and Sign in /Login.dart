@@ -62,9 +62,9 @@ class _LoginState extends State<Login> {
                 children: [
                   const Text(
                     "LOGIN",
-                    style: TextStyle(color: Color(0xFFFFCA28), fontSize: 40),
+                    style: TextStyle(color: Colors.blueAccent, fontSize: 40),
                   ),
-                  Image.asset("assets/login.png"),
+                  Image.asset("assets/Login.png"),
                   const SizedBox(height: 15),
                   _buildTextFormField(
                     controller: emailController,
@@ -103,7 +103,7 @@ class _LoginState extends State<Login> {
                     width: MediaQuery.of(context).size.width * .9,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      color: const Color(0xFFFFCA28),
+                      color: const Color.fromARGB(255, 40, 90, 255),
                     ),
                     child: isLoading
                         ? const Center(
@@ -140,7 +140,7 @@ class _LoginState extends State<Login> {
                         child: const Text(
                           'SIGN UP',
                           style: TextStyle(
-                            color: Color(0xFFFFCA28),
+                            color: Colors.blueAccent,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -172,7 +172,7 @@ class _LoginState extends State<Login> {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: const Color(0xFFFFCA28).withOpacity(.2),
+        color: Colors.blueAccent.withOpacity(.2),
       ),
       child: TextFormField(
         controller: controller,
@@ -195,7 +195,7 @@ class _LoginState extends State<Login> {
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: const Color(0xFFFFCA28).withOpacity(.2),
+        color: Colors.blueAccent.withOpacity(.2),
       ),
       child: TextFormField(
         controller: controller,

@@ -52,7 +52,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   const ListTile(
                     title: Text(
                       "Register New Account",
-                      style: TextStyle(color:Color(0xFFFFCA28) ,fontSize: 60, fontWeight: FontWeight.bold),
+                      style: TextStyle(color:Colors.blueAccent ,fontSize: 60, fontWeight: FontWeight.bold),
                     ),
                   ),
                   Container(
@@ -60,7 +60,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: Color(0xFFFFCA28).withOpacity(.2),
+                      color: Colors.blueAccent.withOpacity(.2),
                     ),
                     child: TextFormField(
                       controller: usernameController,
@@ -77,7 +77,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: Color(0xFFFFCA28).withOpacity(.2),
+                      color: Colors.blueAccent.withOpacity(.2),
                     ),
                     child: TextFormField(
                       controller: emailname,
@@ -100,7 +100,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: Color(0xFFFFCA28).withOpacity(.2),
+                      color: Colors.blueAccent.withOpacity(.2),
                     ),
                     child: TextFormField(
                       controller: password,
@@ -134,7 +134,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(8),
-                      color: Color(0xFFFFCA28).withOpacity(.2),
+                      color: Colors.blueAccent.withOpacity(.2),
                     ),
                     child: TextFormField(
                       controller: confirmPassword,
@@ -171,7 +171,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     width: MediaQuery.of(context).size.width * .9,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
-                      color: Color(0xFFFFCA28),
+                      color: Colors.blueAccent,
                     ),
                     child: TextButton(
                       onPressed: () async {
@@ -223,7 +223,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: const Text(
                           'LOGIN',
                           style: TextStyle(
-                            color: Color(0xFFFFCA28),
+                            color: Colors.blueAccent,
                             fontWeight: FontWeight.bold,
                           ),
                         ),

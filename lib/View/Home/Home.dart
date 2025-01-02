@@ -137,7 +137,12 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
       theme: isDarkTheme ? ThemeData.dark() : ThemeData.light(),
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Weather App"),
+          backgroundColor: Colors.blueAccent,
+          title: Text("Weather App",
+            style: TextStyle(
+              color: isDarkTheme ? Colors.white : Colors.black,
+            ),
+          ),
           actions: [
             Switch(
               value: isDarkTheme,

@@ -52,17 +52,17 @@ class OnboardingData {
     OnboardingInfo(
       title: "NoteEase",
       description: "Capture, sync, and organize your notes in real-time.",
-      image: "assets/onboarding1.png",
+      image: "assets/Weather.png",
     ),
     OnboardingInfo(
       title: "MyNotes",
       description: "Your notes, always synced and accessible, wherever you are.",
-      image: "assets/onboarding2.png",
+      image: "assets/Sunny day-rafiki.png",
     ),
     OnboardingInfo(
       title: "QuickNotes",
       description: "Effortless note management with real-time syncing and cloud storage",
-      image: "assets/onboarding3.png",
+      image: "assets/Raining-rafiki.png",
     ),
   ];
 }
@@ -144,7 +144,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     controller.items[currentIndex].title,
                     style: const TextStyle(
                       fontSize: 25,
-                      color: Color(0xFFFFCA28),
+                      color: Colors.blueAccent,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.center,
@@ -177,7 +177,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
           margin: const EdgeInsets.symmetric(horizontal: 2),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
-            color: currentIndex == index ? Color(0xFFFFCA28) : Colors.grey,
+            color: currentIndex == index ? Colors.blueAccent : Colors.grey,
           ),
           height: 7,
           width: currentIndex == index ? 30 : 7,
@@ -195,7 +195,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
       height: 55,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
-        color: Color(0xFFFFCA28),
+        color: Colors.blueAccent,
       ),
       child: TextButton(
         onPressed: () {
