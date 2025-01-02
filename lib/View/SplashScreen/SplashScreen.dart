@@ -50,17 +50,17 @@ class OnboardingInfo {
 class OnboardingData {
   List<OnboardingInfo> items = [
     OnboardingInfo(
-      title: "NoteEase",
+      title: "Weather",
       description: "Track the latest weather conditions for any location in real time.",
       image: "assets/Weather.png",
     ),
     OnboardingInfo(
-      title: "MyNotes",
+      title: "Sunny",
       description: "Bright, clear skies and plenty of sunshine — perfect for outdoor adventures.",
       image: "assets/Sunny day-rafiki.png",
     ),
     OnboardingInfo(
-      title: "QuickNotes",
+      title: "Raining",
       description: "Raindrops falling from the sky, bringing a cool and refreshing atmosphere.",
       image: "assets/Raining-rafiki.png",
     ),
