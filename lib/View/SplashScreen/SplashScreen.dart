@@ -51,17 +51,17 @@ class OnboardingData {
   List<OnboardingInfo> items = [
     OnboardingInfo(
       title: "NoteEase",
-      description: "Capture, sync, and organize your notes in real-time.",
+      description: "Track the latest weather conditions for any location in real time.",
       image: "assets/Weather.png",
     ),
     OnboardingInfo(
       title: "MyNotes",
-      description: "Your notes, always synced and accessible, wherever you are.",
+      description: "Bright, clear skies and plenty of sunshine — perfect for outdoor adventures.",
       image: "assets/Sunny day-rafiki.png",
     ),
     OnboardingInfo(
       title: "QuickNotes",
-      description: "Effortless note management with real-time syncing and cloud storage",
+      description: "Raindrops falling from the sky, bringing a cool and refreshing atmosphere.",
       image: "assets/Raining-rafiki.png",
     ),
   ];
