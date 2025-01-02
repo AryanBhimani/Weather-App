@@ -2,6 +2,8 @@
 
 A new Flutter project.
 
+![Onboarding](assets/Weather-rafiki.png.jpg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
