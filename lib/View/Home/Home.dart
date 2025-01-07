@@ -55,7 +55,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
 
   Future<void> fetchWeather(String cityName) async {
     final apiKey = "YOUR_API_KEY"; // Replace with your OpenWeatherMap API key
-    
     final url = "https://api.openweathermap.org/data/2.5/weather?q=$cityName&appid=$apiKey&units=metric";
 
     setState(() {

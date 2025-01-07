@@ -66,7 +66,7 @@ Weather App is a mobile application built using Flutter that provides real-time 
 
 <a href="https://dev-aryanbhimani.pantheonsite.io/" target="_blank"><img src="assets/portfolio.png" width="50" ></a>
 <a href="https://www.linkedin.com/in/aryanbhimani/" target="_blank"><img src="assets/linkedin.png" width="50"></a>
-<a href="https://twitter.com/yourtwitterhandle" target="_blank"><img src="assets/twitter.png" width="50"></a> 
+<a href="https://x.com/aryan46022" target="_blank"><img src="assets/twitter.png" width="50"></a> 
 
 For queries or support, feel free to reach out:  
 📞 **+91 9408962204**  
